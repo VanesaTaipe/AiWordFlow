@@ -1,3 +1,4 @@
+
 package com.example.aiwordflow
 
 import android.content.Intent
@@ -25,8 +26,10 @@ import com.example.aiwordflow.navigation.Screen
 import com.example.aiwordflow.ui.theme.AiWordFlowTheme
 import com.example.aiwordflow.components.TopAppBar
 import com.google.firebase.auth.FirebaseAuth
+
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+
 
 class MainActivity : ComponentActivity() {
 
@@ -53,12 +56,21 @@ class MainActivity : ComponentActivity() {
                 MainScreen(
                     userName = currentUser?.displayName ?: "Usuario",
                     onSignOut = {
+
                         signOut()
+
+                        // Cerrar sesión en Firebase
+                        auth.signOut()
+                        // Ir a SignInActivity
+                        startActivity(Intent(this@MainActivity, SignInActivity::class.java))
+                        finish()
+
                     }
                 )
             }
         }
     }
+
 
     private fun signOut() {
         // 1. Cerrar sesión en Firebase
@@ -77,6 +89,7 @@ class MainActivity : ComponentActivity() {
             finish()
         }
     }
+
 }
 
 @Composable
@@ -104,6 +117,7 @@ fun MainScreen(
     ) { innerPadding ->
         NavHost(
             navController = navController,
+
             startDestination = Screen.Inico.rout,
             modifier = Modifier.padding(innerPadding)
         ) {
@@ -127,3 +141,5 @@ fun aser(){
         MainScreen(userName = "Vanesa") { }
     }
 }
+
+

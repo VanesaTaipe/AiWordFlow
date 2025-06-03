@@ -45,6 +45,7 @@ fun BottomNavigationBar(
     )
 
     NavigationBar(
+        containerColor = Color.White
     ) {
         navigationItems.forEachIndexed { index, item ->
             NavigationBarItem(
@@ -68,11 +69,15 @@ fun BottomNavigationBar(
                 },
                 label = {
                     Text(
-                        item.title
+                        text = item.title,
+                        color = if (index == selectedNavigationIndex.intValue)
+                            Color.Black
+                        else Color.Gray
                     )
                 },
                 colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = MaterialTheme.colorScheme.primary,
+                    unselectedIconColor = Color.Gray,
                     indicatorColor = MaterialTheme.colorScheme.onSecondary
                 )
             )

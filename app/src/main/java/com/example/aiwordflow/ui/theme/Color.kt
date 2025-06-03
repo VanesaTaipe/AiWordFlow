@@ -2,6 +2,7 @@ package com.example.aiwordflow.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
+
 // ============= LIGHT THEME COLORS =============
 
 // Primary Colors (Olive/Brown tones)
@@ -100,11 +101,15 @@ val DarkInversePrimary = Color(0xFF695C3F)   // Dark primary for light backgroun
 val DarkOutline = Color(0xFF97917F)       // Medium light outline
 val DarkOutlineVariant = Color(0xFF4A4739) // Dark outline variant
 
-// ============= LEGACY COLORS (for compatibility) =============
-val Purple80 = DarkPrimary               // D4C8A5
-val PurpleGrey80 = DarkSecondary         // F4E287 -> E6D4A8
-val Pink80 = Primary                     // 695C3F
 
-val Purple40 = Color(0xFFD7C66B)         // Keeping your original
-val PurpleGrey40 = Color(0xFF6F4F00)     // Keeping your original
-val Pink40 = Color(0xFF514429)           // Keeping your original
+
+val Purple40 = Color(0xFFD7C66B)
+val PurpleGrey40 = Color(0xFF6F4F00)
+val Pink40 = Color(0xFF514429)
+
+val Purple80 = Color(0xFFD4C8A5)
+val PurpleGrey80 = Color(0xFFF4E287)
+val Pink80 = Color(0xFF695C3F)
+
+
+

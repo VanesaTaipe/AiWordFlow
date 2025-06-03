@@ -83,11 +83,15 @@ class SignInActivity : ComponentActivity() {
 
         val googleSignInClient = GoogleSignIn.getClient(this, gso)
 
+
         // SOLUCIÓN: Limpiar la selección de cuenta anterior para mostrar el selector
         googleSignInClient.signOut().addOnCompleteListener {
             val signInIntent = googleSignInClient.signInIntent
             signInLauncher.launch(signInIntent)
         }
+        val signInIntent = googleSignInClient.signInIntent
+        signInLauncher.launch(signInIntent)
+
     }
 
     private fun firebaseAuthWithGoogle(idToken: String) {
